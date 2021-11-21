@@ -1,6 +1,6 @@
 fetch("https://restcountries.com/v3.1/all")
   .then((res) => res.json())
-  .then((data) => displayCountries(data));
+  .then((data) => displayCountries(data)); //.slice(0, 5)
 
 const displayCountries = (countries) => {
   const countriesDiv = document.getElementById("countries");
@@ -9,18 +9,25 @@ const displayCountries = (countries) => {
 
     const countryDiv = document.createElement("div");
     const h3 = document.createElement("h3");
-    h3.innerText = country.name;
-    const p = document.createElement("p");
-    p.innerText = country.capital;
-    const region = document.createElement("p");
-    region.innerText = country.region;
+    // h3.innerText = `Name: ${country.name.common}`;
+    // const p = document.createElement("p");
+    // p.innerText = `capital: ${country.capital}`;
+    // const region = document.createElement("p");
+    // region.innerText = `Region: ${country.region}`;
 
-    countryDiv.appendChild(h3);
-    countryDiv.appendChild(p);
-    countryDiv.appendChild(region);
+    // countryDiv.appendChild(h3);
+    // countryDiv.appendChild(p);
+    // countryDiv.appendChild(region);
+
+    countryDiv.className = "country";
+    const countryInfo = `
+    <h3 class ="countryName" > ${country.name.common}</h3>
+    <p class="capitalName" > Capital: ${country.capital} </p>
+    <p class="regionName" > Region: ${country.region} </p>
+    `;
+
+    countryDiv.innerHTML = countryInfo;
 
     countriesDiv.appendChild(countryDiv);
-
-    console.log(country.name);
   }
 };

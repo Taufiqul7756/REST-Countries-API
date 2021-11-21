@@ -1,3 +1,26 @@
 body {
-  background-color: aqua;
+  background-color: rgb(224, 238, 238);
+}
+.country {
+  border: 3px dotted rgb(10, 10, 10);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 3%;
+  width: 20%;
+  margin-left: 5px;
+  float: left;
+  display: grid;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.country:hover {
+  background-color: rgb(140, 202, 223);
+  transition: all ease-in-out 0.5s;
+}
+.countryName {
+  color: greenyellow;
+  background-color: hotpink;
+  font-size: 20px;
 }
