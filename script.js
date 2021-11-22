@@ -45,7 +45,8 @@ const renderCountryInfo = (country) => {
   <h1> ${country.name.common} </h1>
   <p> Population:  ${country.population} </p>
   <p> Area: ${country.area} </p>
-  <img src="${country.flag}" >
+  <img src="${country.flags.png}" >
   
   `;
+  console.log(country);
 };
