@@ -24,3 +24,7 @@ body {
   background-color: hotpink;
   font-size: 20px;
 }
+
+#country-details img {
+  width: 400px;
+}

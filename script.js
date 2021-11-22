@@ -24,10 +24,28 @@ const displayCountries = (countries) => {
     <h3 class ="countryName" > ${country.name.common}</h3>
     <p class="capitalName" > Capital: ${country.capital} </p>
     <p class="regionName" > Region: ${country.region} </p>
+    <button onclick="displayCountry('${country.name.common}')">Details </button>
     `;
 
     countryDiv.innerHTML = countryInfo;
 
     countriesDiv.appendChild(countryDiv);
   }
+};
+
+const displayCountry = (name) => {
+  const url = `https://restcountries.com/v3.1/name/${name}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => renderCountryInfo(data[0]));
+};
+const renderCountryInfo = (country) => {
+  const countryDiv = document.getElementById("country-details");
+  countryDiv.innerHTML = `
+  <h1> ${country.name.common} </h1>
+  <p> Population:  ${country.population} </p>
+  <p> Area: ${country.area} </p>
+  <img src="${country.flag}" >
+  
+  `;
 };
